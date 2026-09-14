@@ -96,6 +96,53 @@
 
     <section id="code">
       <h2>Пример кода</h2>
+
+      <section id="code">
+    <h2>Пример кода</h2>
+
+    <pre><code>
+const products = [
+  { id: 1, name: "iPhone 16", price: 999, discount: 10, stock: 5 },
+  { id: 2, name: "MacBook Air", price: 1299, discount: 5, stock: 4 },
+  { id: 3, name: "AirPods Pro", price: 249, discount: 20, stock: 8 }
+];
+
+let cart = [];
+
+const getFinalPrice = product => {
+  return product.price * (1 - product.discount / 100);
+};
+
+const addToCart = (product, quantity = 1) => {
+  if (!product || product.stock === 0) {
+    console.log("Товар недоступен");
+    return;
+  }
+
+  if (quantity > product.stock) {
+    console.log(`На складе только ${product.stock} шт.`);
+    return;
+  }
+
+  const existingProduct = cart.find(item => item.product.id === product.id);
+
+  if (existingProduct) {
+    existingProduct.quantity += quantity;
+  } else {
+    cart.push({ product, quantity });
+  }
+
+  console.log(`${product.name} добавлен в корзину`);
+};
+
+const getCartTotal = () => {
+  return cart.reduce((total, item) => {
+    const price = getFinalPrice(item.product);
+    return total + price * item.quantity;
+  }, 0);
+};
+    </code></pre>
+</section>
     </section>
 
 
