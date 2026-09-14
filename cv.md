@@ -6,8 +6,8 @@
 
 ## Контакты
 
-- TG: @S3akiraXlll
-- Email: aga.dadaon@mail.ru
+- TG: [@S3akiraXlll](https://t.me/S3akiraXlll)
+- Email: [aga.dadaon@mail.ru](mailto:aga.dadaon@mail.ru)
 - Discord: hatemyego
 - GitHub: [adamksX3](https://github.com/adamksX3)
 
