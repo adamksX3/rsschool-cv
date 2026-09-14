@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CV — Кирилл Адамчик</title>
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="navigation">
+        <ul>
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#code">Пример кода</a></li>
+            <li><a href="#experience">Опыт</a></li>
+            <li><a href="#education">Образование</a></li>
+            <li><a href="#english">English</a></li>
+        </ul>
+    </nav>
+
+    <div class="profile">
+        <img src="assets/arts.jpg" alt="Фото профиля">
+
+        <div class="profile-info">
+            <h1>Кирилл Адамчик</h1>
+            <p>Junior Front-End Developer</p>
+        </div>
+    </div>
+</header>
+
+<main class="main">
+
+    <section id="about">
+        <h2>Обо мне</h2>
+
+        <p>
+            Мне 23 года, работаю в логистическом центре, в свободное время
+            самостоятельно изучаю программирование. Начал с Python, затем
+            перешёл к JavaScript и HTML/CSS. Интересует смена рода деятельности,
+            в связи с этим уделяю данному увлечению всё свободное время.
+        </p>
+
+        <p>
+            Прохожу курс RS School, чтобы структурировать знания и двигаться
+            дальше в профессию разработчика. В планах изучить один из
+            фреймворков и TypeScript. Считаю себя новичком, поэтому и пришёл
+            на данный поток, чтобы лучше структурировать информацию
+            и применить её на практике.
+        </p>
+    </section>
+
+    <section id="contacts">
+        <h2>Контакты</h2>
+
+        <ul>
+            <li>
+                Telegram:
+                <a href="https://t.me/S3akiraXlll">@S3akiraXlll</a>
+            </li>
+            <li>
+                Email:
+                <a href="mailto:aga.dadaon@mail.ru">aga.dadaon@mail.ru</a>
+            </li>
+            <li>Discord: hatemyego</li>
+            <li>
+                GitHub:
+                <a href="https://github.com/adamksX3">adamksX3</a>
+            </li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2>Навыки</h2>
+
+        <h3>Front-end</h3>
+
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Git / GitHub</li>
+            <li>Python</li>
+        </ul>
+    </section>
+
+    <section id="code">
+        <h2>Пример кода</h2>
+
+        <pre><code>const products = [
+    { id: 1, name: "iPhone 16", price: 999, discount: 10, stock: 5 },
+    { id: 2, name: "MacBook Air", price: 1299, discount: 5, stock: 4 },
+    { id: 3, name: "AirPods Pro", price: 249, discount: 20, stock: 8 }
+];
+
+let cart = [];
+
+const getFinalPrice = product =&gt; {
+    return product.price * (1 - product.discount / 100);
+};
+
+const addToCart = (product, quantity = 1) =&gt; {
+    if (!product || product.stock === 0) {
+        console.log("Товар недоступен");
+        return;
+    }
+
+    if (quantity &gt; product.stock) {
+        console.log(`На складе только ${product.stock} шт.`);
+        return;
+    }
+
+    const existingProduct = cart.find(
+        item =&gt; item.product.id === product.id
+    );
+
+    if (existingProduct) {
+        existingProduct.quantity += quantity;
+    } else {
+        cart.push({ product, quantity });
+    }
+
+    console.log(`${product.name} добавлен в корзину`);
+};
+
+const getCartTotal = () =&gt; {
+    return cart.reduce((total, item) =&gt; {
+        const price = getFinalPrice(item.product);
+        return total + price * item.quantity;
+    }, 0);
+};</code></pre>
+    </section>
+
+    <section id="experience">
+        <h2>Опыт</h2>
+
+        <p>На данный момент прохожу обучение в RS School.</p>
+
+        <p>
+            Коммерческого опыта пока не имеется. Учусь, чтобы выйти
+            на уровень трудоустройства.
+        </p>
+    </section>
+
+    <section id="education">
+        <h2>Образование</h2>
+
+        <ul>
+            <li>RS School — Front-End / Full Stack обучение</li>
+            <li>Самостоятельное изучение HTML, CSS, JavaScript и Python</li>
+        </ul>
+    </section>
+
+    <section id="english">
+        <h2>English</h2>
+
+        <p>Уровень английского языка — B1.</p>
+
+        <p>
+            Использую английский язык при изучении документации,
+            обучающих материалов и программирования.
+        </p>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <a href="https://github.com/adamksX3">GitHub</a>
+
+    <p>© 2026 Кирилл Адамчик</p>
+
+    <a href="https://rs.school/courses/javascript-ru">
+        <img src="assets/rs-school-logo.svg" alt="RS School">
+    </a>
+</footer>
+
+</body>
+
+</html>
